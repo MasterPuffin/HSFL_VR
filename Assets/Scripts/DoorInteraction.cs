@@ -12,15 +12,18 @@ public class DoorInteraction : MonoBehaviour {
 
     [Space] Animator anim;
 
-    public string
-        boolName = "Open"; //boolean variable, die auf true oder false gesetzt werden muss, um eine Aniamtion auszuführen
+    //boolean variable, die auf true oder false gesetzt werden muss, um eine Aniamtion auszuführen
+    public string boolName = "Open";
 
     int boolID;
-    public bool open = false; //Tür auf oder zu (zum Start des Spiels)
+
+    //Tür auf oder zu (zum Start des Spiels)
+    public bool open = false;
 
 
     [Space]
-    public bool canBeOpened = true; //bedeutet man hat bereits einen Schlüssel für die Tür oder man braucht keinen
+    //bedeutet man hat bereits einen Schlüssel für die Tür oder man braucht keinen
+    public bool canBeOpened = true;
 
     public bool isInteractable = true;
     public bool interactOnlyOnce = true;
@@ -33,7 +36,8 @@ public class DoorInteraction : MonoBehaviour {
 
     private void Awake() {
         anim = GetComponent<Animator>();
-        boolID = Animator.StringToHash(boolName); //einfacher über eine ID als einem String
+        //einfacher über eine ID als einem String
+        boolID = Animator.StringToHash(boolName);
         anim.SetBool(boolID, open);
     }
 

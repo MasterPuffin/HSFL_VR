@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 
-public class ActivateAndDeactivate : MonoBehaviour //aktiviert / deaktiviert Bereiche der Map
-{
+//aktiviert / deaktiviert Bereiche der Map
+public class ActivateAndDeactivate : MonoBehaviour {
     public List<GameObject> list;
-    public bool setActive; //wenn nicht active, dann deactivate
+
+    //wenn nicht active, dann deactivate
+    public bool setActive;
     public bool setAtStart;
 
     bool done = false;
