@@ -17,7 +17,8 @@ public class XRCardboardController : MonoBehaviour {
 
     private Camera camera;
     private GameObject _gazedAtObject = null;
-    [SerializeField] private float MAX_DISTANCE = 10;
+    //Default 10
+    [SerializeField] private float MAX_DISTANCE = 5;
 
     public static XRCardboardController Instance { get; private set; }
 
@@ -115,7 +116,8 @@ public class XRCardboardController : MonoBehaviour {
         if (!playerM.IsMoving()) {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, MAX_DISTANCE, interactablesLayers)) {
-            //Disable interactableLayers so the player can't see through walls
+            //Disable interactableLayers so the player can't see through walls, however this breaks the interaction with
+            //other things like images. Disabled it for now and lowered the max distance
             //if (Physics.Raycast(transform.position, transform.forward, out hit, MAX_DISTANCE)) {
                 // GameObject detected in front of the camera.
                 if (_gazedAtObject != hit.transform.gameObject) {
