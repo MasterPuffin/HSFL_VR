@@ -24,9 +24,11 @@ public class XRCardboardController : MonoBehaviour {
     PlayerMovement playerM;
 
     private void Awake() {
+        /*
         if (Instance != null) {
             Debug.LogError("Only one instance of singleton allowed");
         }
+        */
 
         Instance = this;
     }
@@ -117,7 +119,7 @@ public class XRCardboardController : MonoBehaviour {
             if (Physics.Raycast(transform.position, transform.forward, out hit, MAX_DISTANCE)) {
                 // GameObject detected in front of the camera.
                 if (_gazedAtObject != hit.transform.gameObject) {
-                    Debug.Log("New gazed object: " + hit.transform.gameObject.name);
+                    //Debug.Log("New gazed object: " + hit.transform.gameObject.name);
 
                     _gazedAtObject?.SendMessage("PointerExit");
                     _gazedAtObject = hit.transform.gameObject;

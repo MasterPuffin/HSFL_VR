@@ -22,14 +22,15 @@ public class GameManager : MonoBehaviour {
     [Tooltip("Schnellster Wert für die Auswahl. durch den state-wert 6 abrufbar")]
     public float sel_f = 1.15f;
 
-    static float movementSpeed = 0.75f; //Standard Geschwindigkeit
+    //Standard Geschwindigkeit
     //Beispiel Presets im Hauptmenü :   Langsam : 0.4f  Standard : 0.75f    Schnell : 1.15f;
+    static float movementSpeed = 0.75f;
 
-    static bool teleportMode = false; //Standardmäßig keine Teleportation
+    //Standardmäßig keine Teleportation
+    static bool teleportMode = false;
 
-    static float
-        selectTime =
-            2f; //Zeit, die es dauert, bis eine Auswahl bestätigt ist. Standard : 2; eventuell Preset im Hauptmenü: Schnell : 1.25f     Standard : 2f 
+    //Zeit, die es dauert, bis eine Auswahl bestätigt ist. Standard : 2; eventuell Preset im Hauptmenü: Schnell : 1.25f     Standard : 2f 
+    static float selectTime = 2f;
 
     public void MainMenu() {
         SceneManager.LoadScene(0);

@@ -33,8 +33,8 @@ public class Notifications : MonoBehaviour {
         isTimerAktive = true;
     }
 
-    public void SendNotificationWithCustomText(string text_custom) {
-        notification.text = text_custom;
+    public void SendNotificationWithCustomText(string textCustom) {
+        notification.text = textCustom;
         isTimerAktive = true;
     }
 }

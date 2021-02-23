@@ -55,7 +55,7 @@ public class SelectCircle : MonoBehaviour {
     }
 
     public void StopProgress() {
-        Debug.Log("StopProgress");
+        //Debug.Log("StopProgress");
         progressing = false;
         img.fillAmount = 0f;
     }

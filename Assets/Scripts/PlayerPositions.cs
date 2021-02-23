@@ -53,16 +53,18 @@ public class PlayerPositions : MonoBehaviour {
             GameObject child = allPositionPoints.transform.GetChild(i).gameObject;
             if (!child.Equals(gameObject)) {
                 child.SetActive(false);
-            } else {
+            } 
+            /*else {
                 Debug.Log("this gameObject isnt deactivated!");
             }
+            */
         }
 
         //nur die von dieser Position aus sichtbaren Positionen werden wieder aktiviert und damit sichtbar. Da in PlayerMovement gleichzeitig
         //das Parent "PlayerPositions" deaktiviert wird, sieht man die neu aktivierten Punkte erst, wenn der Spieler am nächsten Punkt angekommen ist         
         foreach (PlayerPositions p in positionsNearby) {
             p.gameObject.SetActive(true);
-            Debug.Log("Activate nearby Positions!");
+            //Debug.Log("Activate nearby Positions!");
         }
     }
 }

@@ -15,13 +15,9 @@ public class SwitchTrigger : MonoBehaviour {
 
     public void ActivateEvent() {
         if (useTrigger) {
-            if (eventTrigger != null) {
-                eventTrigger.Invoke();
-            }
+            eventTrigger?.Invoke();
         } else {
-            if (eventElse != null) {
-                eventElse.Invoke();
-            }
+            eventElse?.Invoke();
         }
     }
 

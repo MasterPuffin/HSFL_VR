@@ -15,7 +15,7 @@ public class LightControl : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        Debug.Log("Start");
+        //Debug.Log("Start");
         l = GetComponent<Light>();
         l.enabled = onStartEnabled;
     }

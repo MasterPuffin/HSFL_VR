@@ -13,37 +13,22 @@ public class CardboardButtonClickable : MonoBehaviour, IPointerEnterHandler, IPo
 {
     private Button _button;
 
-    void Start()
-    {
+    void Start() {
         _button = GetComponent<Button>();
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        Debug.Log("**** OnPointerEnter " + gameObject.name);
+    public void OnPointerEnter(PointerEventData eventData) {
+        //Debug.Log("**** OnPointerEnter " + gameObject.name);
         XRCardboardController.Instance.OnTriggerPressed.AddListener(OnClick);
     }
 
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Debug.Log("**** OnPointerExit " + gameObject.name);
+    public void OnPointerExit(PointerEventData eventData) {
+        //Debug.Log("**** OnPointerExit " + gameObject.name);
         XRCardboardController.Instance.OnTriggerPressed.RemoveListener(OnClick);
     }
 
-    private void OnClick()
-    {
+    private void OnClick() {
         _button.onClick.Invoke();
-    } 
-    
-    
-    //public void OnPointerClick(PointerEventData eventData)
-    //{
-    //    Debug.Log("**** OnPointerClick");
-    //}
-
-    //public void OnSelect(BaseEventData eventData)
-    //{
-    //    Debug.Log("**** OnSelect");
-    //}
+    }
 }

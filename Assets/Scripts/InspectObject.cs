@@ -61,8 +61,9 @@ public class
     float j;
 
     private void Awake() {
-        originPosition = gameObject.transform.position;
-        originRotation = gameObject.transform.rotation;
+        var tmpTransform = gameObject.transform;
+        originPosition = tmpTransform.position;
+        originRotation = tmpTransform.rotation;
     }
 
     // Start is called before the first frame update
@@ -112,9 +113,10 @@ public class
         canInspect = true;
         inspected = false;
         isOnInspectPosition = false;
+        var position = cam.position;
 
-        Vector3 vec = Vector3.Lerp(originPosition, cam.position, inspectDistance);
-        Vector3 vecHeight = Vector3.Lerp(originPosition, cam.position, inspectHeight);
+        Vector3 vec = Vector3.Lerp(originPosition, position, inspectDistance);
+        Vector3 vecHeight = Vector3.Lerp(originPosition, position, inspectHeight);
 
         inspectPos = new Vector3(vec.x, vecHeight.y, vec.z);
         StopBeingInteractable();

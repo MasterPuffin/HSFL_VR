@@ -8,13 +8,11 @@ public class TriggerEvent : MonoBehaviour {
     public bool onlyOnce = true;
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("Trigger");
+        //Debug.Log("Trigger");
         if (other.gameObject.CompareTag("MainCamera")) {
-            if (onTriggerEnter != null) {
-                onTriggerEnter.Invoke();
-            }
+            onTriggerEnter?.Invoke();
 
-            Debug.Log("Trigger Camera Event Invoked");
+            //Debug.Log("Trigger Camera Event Invoked");
             if (onlyOnce) {
                 gameObject.SetActive(false);
             }
