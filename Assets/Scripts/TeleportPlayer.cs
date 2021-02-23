@@ -2,44 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeleportPlayer : MonoBehaviour
-{
-
+public class TeleportPlayer : MonoBehaviour {
     Animator anim;
-    public string boolName;        
+    public string boolName;
     int boolID;
 
     Transform player;
 
     bool canMove = false;
 
-    private void Start()
-    {
+    private void Start() {
         anim = GetComponent<Animator>();
         boolID = Animator.StringToHash(boolName);
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    public void StartTransition()
-    {
+    public void StartTransition() {
         anim.SetBool(boolID, true);
     }
 
-    public void Teleport()      //wenn der Bildschirm schwarz ist, dann canMove
-    {
-        canMove = true;     
+    //wenn der Bildschirm schwarz ist, dann canMove
+    public void Teleport() {
+        canMove = true;
     }
 
-    public bool GetCanMove()
-    {
+    public bool GetCanMove() {
         return canMove;
     }
 
-    public void FadeIn()
-    {
+    public void FadeIn() {
         anim.SetBool(boolID, false);
         canMove = false;
     }
-
-
 }

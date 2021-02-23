@@ -2,75 +2,67 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPositions : MonoBehaviour
-{
-
-    public List<PlayerPositions> positionsNearby;   //die von dieser Position aus sichtbaren Punkte
+public class PlayerPositions : MonoBehaviour {
+    //die von dieser Position aus sichtbaren Punkte
+    public List<PlayerPositions> positionsNearby;
 
     PlayerMovement playerM;
 
     GameObject allPositionPoints;
 
-    private bool isInteracting = false; //Spieler guckt auf den Positionspunkt, dann true
-    SelectCircle img;                   //Auswahlkreis
+    //Spieler guckt auf den Positionspunkt, dann true
+    private bool isInteracting = false;
+
+    //Auswahlkreis
+    SelectCircle img;
 
     // Start is called before the first frame update
-    private void Start()
-    {
+    private void Start() {
         img = GameObject.FindGameObjectWithTag("Circle").GetComponent<SelectCircle>();
         playerM = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         allPositionPoints = transform.parent.gameObject;
     }
 
 
-    public void StartCircle()
-    {
-        if (!isInteracting)
-        {
+    public void StartCircle() {
+        if (!isInteracting) {
             isInteracting = true;
             img.StartCircle(SetNewPosition);
         }
     }
 
-    public void StopCircle()
-    {
-        if (isInteracting)
-        {
+    public void StopCircle() {
+        if (isInteracting) {
             img.StopProgress();
             isInteracting = false;
         }
     }
 
-    private void SetNewPosition()
-    {
+    private void SetNewPosition() {
         isInteracting = false;
         ChangePositionPointsVisibility();
-        playerM.NewPosition(transform.position);    //übergibt dem PlayerMovement die Koordinaten für diesen PositionsPunkt, wo der Spieler jetzt hinlaufen will
+        //übergibt dem PlayerMovement die Koordinaten für diesen PositionsPunkt, wo der Spieler jetzt hinlaufen will
+        playerM.NewPosition(transform.position);
         gameObject.SetActive(false);
     }
 
 
-
-    void ChangePositionPointsVisibility()
-    {
-
-        for (int i=0; i < allPositionPoints.transform.childCount; i++)              //alle Positionen werden deaktiviert
-        {
+    void ChangePositionPointsVisibility() {
+        //alle Positionen werden deaktiviert
+        for (int i = 0; i < allPositionPoints.transform.childCount; i++) {
             GameObject child = allPositionPoints.transform.GetChild(i).gameObject;
-            if(!child.Equals(gameObject))
-            {
+            if (!child.Equals(gameObject)) {
                 child.SetActive(false);
-            } else
-            {
+            } else {
                 Debug.Log("this gameObject isnt deactivated!");
-            }          
+            }
         }
 
-        foreach (PlayerPositions p in positionsNearby)                      //nur die von dieser Position aus sichtbaren Positionen werden wieder aktiviert und damit sichtbar. Da in PlayerMovement gleichzeitig
-        {                                                                   //das Parent "PlayerPositions" deaktiviert wird, sieht man die neu aktivierten Punkte erst, wenn der Spieler am nächsten Punkt angekommen ist         
+        //nur die von dieser Position aus sichtbaren Positionen werden wieder aktiviert und damit sichtbar. Da in PlayerMovement gleichzeitig
+        //das Parent "PlayerPositions" deaktiviert wird, sieht man die neu aktivierten Punkte erst, wenn der Spieler am nächsten Punkt angekommen ist         
+        foreach (PlayerPositions p in positionsNearby) {
             p.gameObject.SetActive(true);
             Debug.Log("Activate nearby Positions!");
         }
     }
-
 }
