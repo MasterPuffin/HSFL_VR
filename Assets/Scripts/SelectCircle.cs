@@ -26,7 +26,7 @@ public class SelectCircle : MonoBehaviour {
     void Start() {
         img = GetComponent<Image>();
         //Kreis nicht gefüllt (0%)
-        Debug.Log("start circle");
+        //Debug.Log("start circle");
         img.fillAmount = 0f;
         maxTime = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().GetSelectTime();
     }

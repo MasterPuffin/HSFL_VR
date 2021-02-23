@@ -114,9 +114,9 @@ public class XRCardboardController : MonoBehaviour {
         //es soll nur interagiert werden können, wenn der Spieler steht
         if (!playerM.IsMoving()) {
             RaycastHit hit;
-            //if (Physics.Raycast(transform.position, transform.forward, out hit, MAX_DISTANCE, interactablesLayers)) {
+            if (Physics.Raycast(transform.position, transform.forward, out hit, MAX_DISTANCE, interactablesLayers)) {
             //Disable interactableLayers so the player can't see through walls
-            if (Physics.Raycast(transform.position, transform.forward, out hit, MAX_DISTANCE)) {
+            //if (Physics.Raycast(transform.position, transform.forward, out hit, MAX_DISTANCE)) {
                 // GameObject detected in front of the camera.
                 if (_gazedAtObject != hit.transform.gameObject) {
                     //Debug.Log("New gazed object: " + hit.transform.gameObject.name);

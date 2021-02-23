@@ -66064,6 +66064,32 @@ PrefabInstance:
       propertyPath: m_SpotAngle
       value: 34
       objectReference: {fileID: 0}
+    - target: {fileID: 177021032848293765, guid: d0dd86402b10ce942a93c4d35b90a3a0,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 8c9f923b5227e4a40b489f477af2c662,
+        type: 3}
+    - target: {fileID: 177021032848293765, guid: d0dd86402b10ce942a93c4d35b90a3a0,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 177021032848293765, guid: d0dd86402b10ce942a93c4d35b90a3a0,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 177021032848293765, guid: d0dd86402b10ce942a93c4d35b90a3a0,
+        type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 177021032848293765, guid: d0dd86402b10ce942a93c4d35b90a3a0,
+        type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 791411056989305726, guid: d0dd86402b10ce942a93c4d35b90a3a0,
         type: 3}
       propertyPath: m_LocalPosition.z

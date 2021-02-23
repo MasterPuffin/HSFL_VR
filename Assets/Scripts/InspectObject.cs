@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class
-    InspectObject : MonoBehaviour //es gibt noch kein richtiges Aufheben. Aktuell wird nur das Objekt deaktiviert, wenn es angeguckt wurde
-{
+//es gibt noch kein richtiges Aufheben. Aktuell wird nur das Objekt deaktiviert, wenn es angeguckt wurde
+public class InspectObject : MonoBehaviour {
     public bool doMoveObject = true;
 
     [Space] public bool eventOnlyOnce = true;
